@@ -4,6 +4,8 @@
 
 基于 [cidaren](https://github.com/moningf/cidaren) 二次开发，集成 AI 大模型答题，支持自动获取任务单词列表，大幅提升正确率。
 
+![运行截图](screenshot.png)
+
 ## GitHub 上现有项目的 Bug
 
 我在 GitHub 上下了好几个词达人的项目，发现**目前 GitHub 上面的都有以下 Bug**：
