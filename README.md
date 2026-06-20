@@ -2,11 +2,13 @@
 
 **如果有帮助别忘了点个 Star 🙏 qwq**
 
+> ⚠️ **免责声明**：本项目仅供学习交流使用。**请好好学英语，一定不要偷懒！** 我们学校老师并没有要求词达人任务，这个是帮我一位朋友做的 qwq。英语是自己的，刷题工具只是辅助，真正的成长来自于认真背单词和练习 📚✨
+
 > 作者：小明同学
 
 基于 [cidaren](https://github.com/moningf/cidaren) 二次开发，集成 AI 大模型答题，支持自动获取任务单词列表，大幅提升正确率。
 
-> 本项目地址：[xm2284/cidaren-ai](https://github.com/xm2284/cidaren-ai)
+> 本项目地址：[xm2284/Cidaren-AI](https://github.com/xm2284/Cidaren-AI)
 
 ![运行截图](screenshot.png)
 
