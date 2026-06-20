@@ -1,5 +1,7 @@
 # Cidaren-AI - 词达人班级任务升级版
 
+**如果有帮助别忘了点个 Star 🙏 qwq**
+
 > 作者：小明同学
 
 基于 [cidaren](https://github.com/moningf/cidaren) 二次开发，集成 AI 大模型答题，支持自动获取任务单词列表，大幅提升正确率。
@@ -69,13 +71,13 @@
 
 ### 3. 配置
 
-复制配置模板并填写：
+**复制配置模板并填写（注意文件名是 `config.json`，不是 `config.example.json`）：**
 
 ```bash
 cp config.example.json config.json
 ```
 
-编辑 `config.json`：
+**编辑 `config.json`（不要编辑 example 文件）：**
 
 ```json
 {
