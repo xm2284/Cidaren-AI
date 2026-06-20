@@ -6,6 +6,8 @@
 
 基于 [cidaren](https://github.com/moningf/cidaren) 二次开发，集成 AI 大模型答题，支持自动获取任务单词列表，大幅提升正确率。
 
+> 本项目地址：[xm2284/cidaren-ai](https://github.com/xm2284/cidaren-ai)
+
 ![运行截图](screenshot.png)
 
 ## GitHub 上现有项目的 Bug
