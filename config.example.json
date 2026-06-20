@@ -1,0 +1,14 @@
+{
+  "user_token": "在此填入你的UserToken",
+  "settings": {
+    "delay_per_question": 2,
+    "correct_rate_target": 100,
+    "max_questions_per_run": 500
+  },
+  "ai": {
+    "api_key": "在此填入你的AI API Key",
+    "base_url": "https://token-plan-cn.xiaomimimo.com/v1",
+    "model": "mimo-v2.5-pro",
+    "enabled": true
+  }
+}
