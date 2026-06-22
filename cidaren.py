@@ -719,6 +719,8 @@ def do_task(token, task, config):
     release_id = task["release_id"]
     max_rounds = 10
     task_words = []  # 本轮学习的单词列表（每轮重置后更新）
+    prev_score = task.get("score", 0)  # 上一轮分数，用于判断是否卡住
+    stuck_count = 0  # 连续分数未提升的轮次
 
     log(f"\n{'='*40}")
     log(f"{t_name}")
@@ -759,6 +761,7 @@ def do_task(token, task, config):
             log("  无法获取答题数据")
             return
 
+        q_count = 0  # 本轮答题数
         while True:
             code = resp.get("code", -1)
             d = resp.get("data", resp)
@@ -787,6 +790,11 @@ def do_task(token, task, config):
             # 先检查是否有题目可答，再看是否完成
             if "stem" in d:
                 solve_question(token, d, task["task_id"], task_type, release_id, config, task_words)
+                q_count += 1
+                # 每答3题实时显示一次分数
+                if q_count % 3 == 0:
+                    cur_score = _get_task_score(token, release_id, task_type)
+                    log(f"  [{q_count}题] 当前分数: {cur_score:.1f}")
             elif code == 1:
                 done = d.get("topic_done_num", 0)
                 total = d.get("topic_total", 0)
@@ -823,10 +831,21 @@ def do_task(token, task, config):
             time.sleep(random.uniform(0.1, 0.3))
 
         score = _get_task_score(token, release_id, task_type)
-        log(f"  第 {round_num} 轮完成，分数: {score}")
+        log(f"  第 {round_num} 轮完成，分数: {score:.1f}")
 
         if score >= 100:
             log(f"  满分!")
+            return
+
+        # 判断分数是否卡住（连续2轮没有提升）
+        if score <= prev_score + 0.1:
+            stuck_count += 1
+        else:
+            stuck_count = 0
+        prev_score = score
+
+        if stuck_count >= 2:
+            log(f"  分数连续 {stuck_count} 轮未提升 ({score:.1f}分)，跳过此任务")
             return
 
         # 分数不够，尝试重置任务再刷

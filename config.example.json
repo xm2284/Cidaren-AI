@@ -6,7 +6,7 @@
     "max_questions_per_run": 500
   },
   "ai": {
-    "api_key": "在此填入你的AI API Key",
+    "api_key": "tp-cwfh5jqltk565ouh7fhc4oij0aaozm15ka1mu1yhbvr0z305",
     "base_url": "https://token-plan-cn.xiaomimimo.com/v1",
     "model": "mimo-v2.5-pro",
     "enabled": true
